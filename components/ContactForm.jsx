@@ -87,6 +87,7 @@ const ContactForm = () => {
     <Box className={classes.root} style={{ minHeight: "850px" }}>
       {error && (
         <Snackbar
+          style={{ height: "100vh" }}
           anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
           open={error}
           autoHideDuration={6000}
@@ -97,11 +98,13 @@ const ContactForm = () => {
         </Snackbar>
       )}
       {success && (
-        <Grid
-          container
-          justify="center"
-          alignItems="center"
-          style={{ minHeight: 600 }}
+        <Snackbar
+          style={{ height: "100vh" }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          open={success}
+          autoHideDuration={1000 * 10}
+          onClose={() => setSuccess(false)}
+          TransitionComponent={TransitionUp}
         >
           <Alert severity="success">
             <Typography variant="body1" align="center" component="p">
@@ -111,7 +114,7 @@ const ContactForm = () => {
               We'll get back to you in 1-2 business days.
             </Typography>
           </Alert>
-        </Grid>
+        </Snackbar>
       )}
       {!isFormSubmited && (
         <Grid container component="form" spacing={4} onSubmit={handleSubmit}>
