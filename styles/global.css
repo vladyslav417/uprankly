@@ -1,0 +1,42 @@
+html,
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+/* slider transform */
+.slick-slide > div {
+  transform: scale(0.85);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slick-center > div {
+  transform: scale(1.05);
+}
+
+.slick-slide {
+  padding-bottom: 3rem;
+}
+
+.slick-dots li button::before {
+  display: inline-block;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  box-sizing: border-box;
+  background-color: #07b7b0;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+  color: transparent;
+}
+
+.slick-dots li.slick-active button::before {
+  background-color: transparent;
+  border-color: #07b7b0;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  color: transparent;
+}
